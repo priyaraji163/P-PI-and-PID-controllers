@@ -52,51 +52,83 @@ The addition of an integral term to the controller ( ) tends to help reduce stea
 	Determine the steady state error and analyse the controllers.
 ## Program: 
 ### Without Controller (Open loop System)
-
-
+```
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+step(sys)
+```
 ### With P-Controller
-
+```
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+kp=350;
+ki=300;
+kd=50;
+C=pid(kp,ki,kd);
+T=feedback(C*sys,1);
+step(T)
+```
 ### With PI Controller
-
+```
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+kp=350;
+ki=300;
+kd=50;
+C=pid(kp,ki,kd);
+T=feedback(C*sys,1);
+step(T)
+```
 ### With PID Controller
+```
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+kp=350;
+ki=300;
+kd=50;
+C=pid(kp,ki,kd);
+T=feedback(C*sys,1);
+step(T)
+```
 
 ## Output: 
 ### Without Controller (Open loop System)
-
-
+<img width="1512" height="925" alt="Exp4 CS WC" src="https://github.com/user-attachments/assets/a6bf8965-7c46-4280-867e-2bc450ff1f8e" />
 ### With P-Controller
-
+<img width="1687" height="901" alt="Exp 4 CS PC" src="https://github.com/user-attachments/assets/b5f645d3-6799-4d97-947f-c6c66447bc57" />
 ### With PI Controller
-
-### With PID Controller
-
-
+<img width="1459" height="891" alt="Exp4 CS PIC" src="https://github.com/user-attachments/assets/6709fb37-ee2a-45a8-8375-be125b25b118" />
+### With PID Controller<img width="1464" height="926" alt="Exp4CS PID" src="https://github.com/user-attachments/assets/ca6665c3-0f27-4d1b-aedc-33e916a12373" />
 ## Result:
 Thus the P, PI and PID controllers for the given system was analysed and the following conclusions were arrived using MATLAB. <br>
 ### With-out controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+Delay time =  0.4s <br>
+Rise time =   1.4s <br>
+Peak time =   undefined  <br>
+Settling time =   2.0s<br>
+Steady State Error =  0.95<br>
 ### With P Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+Delay time =  0.06s<br>
+Rise time =0.10s<br>
+Peak time =0.18s<br>
+Settling time =0.8s<br>
+Steady State Error = 0.0625<br>
 ### With PI Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+Delay time =0.3s<br>
+Rise time =0.4s<br>
+Peak time =0.85s<br>
+Settling time =1.3s<br>
+Steady State Error =0<br>
 ### With PID Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+Delay time =0.05s<br>
+Rise time =0.1s<br>
+Peak time =0.25s<br>
+Settling time =0.6s <br>
+Steady State Error =0<br>
 
 
 
